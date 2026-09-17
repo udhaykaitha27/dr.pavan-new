@@ -1,0 +1,1277 @@
+/* 
+ * Custom Theme Stylesheet for Dr. Pavan Kumar Ediga Rebuild
+ * Inspired by Epione Pain & Spine UI/UX Layout
+ */
+
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-light: #eff6ff;
+    --accent-teal: #14b8a6;
+    --accent-teal-light: #f0fdfa;
+    --accent-teal-hover: #0d9488;
+    --dark-slate: #0f172a;
+    --medium-slate: #1e293b;
+    --light-slate: #f8fafc;
+    --border-color: #e2e8f0;
+    --text-color: #334155;
+    --heading-color: #0f172a;
+    --body-font: 'Inter', sans-serif;
+    --heading-font: 'Outfit', sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Reset & Base Styling */
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    font-weight: 700;
+}
+
+/* Override utility class font-serif to match the new heading font */
+.font-serif {
+    font-family: var(--heading-font) !important;
+}
+
+/* Sticky Navbar inspired by Epione */
+.navbar-custom {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-custom.scrolled {
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-color) !important;
+    transition: var(--transition);
+    position: relative;
+    padding: 0.5rem 1rem !important;
+    display: inline-flex !important;
+    align-items: center;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 1rem;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: calc(100% - 2rem);
+}
+
+/* Hero Carousel Section */
+.hero-carousel-section {
+    position: relative;
+    background-color: var(--light-slate);
+}
+
+.hero-carousel-section .carousel-item {
+    min-height: auto;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+@media (max-width: 991.98px) {
+    .hero-carousel-section .carousel-item {
+        padding: 5rem 0 4rem 0 !important;
+        min-height: auto;
+    }
+}
+
+.hero-image-container {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+    border: 4px solid #ffffff;
+}
+
+/* Stats Section */
+.stat-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-color: var(--primary-color);
+}
+
+/* Cards (Conditions Treated, Treatments) */
+.custom-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2.2rem;
+    height: 100%;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+    border-color: var(--primary-color);
+}
+
+.card-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.75rem;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.custom-card:hover .card-icon {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Services (Dark Section) */
+.dark-section {
+    background-color: var(--dark-slate);
+    color: #ffffff;
+}
+
+.dark-section h2 {
+    color: #ffffff;
+}
+
+.dark-card {
+    background-color: var(--medium-slate);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    padding: 2.2rem;
+    height: 100%;
+    transition: var(--transition);
+}
+
+.dark-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+.dark-card .card-icon {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--primary-color);
+}
+
+.dark-card:hover .card-icon {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Certifications */
+.cert-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.cert-card>div:last-child {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cert-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    transform: translateY(-4px);
+}
+
+.cert-img-wrapper {
+    background-color: #f1f5f9;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.cert-img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.cert-card:hover .cert-img-wrapper img {
+    transform: scale(1.05);
+}
+
+/* Video Playlist Component */
+.video-player-container {
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 4px solid #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.playlist-sidebar {
+    max-height: 520px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1rem;
+    background: #ffffff;
+}
+
+.playlist-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    background: #ffffff;
+    padding: 0.75rem;
+    transition: var(--transition);
+    text-align: left;
+    margin-bottom: 0.75rem;
+}
+
+.playlist-btn:hover,
+.playlist-btn.active {
+    border-color: var(--primary-color);
+    background-color: var(--primary-light);
+}
+
+.playlist-thumb {
+    position: relative;
+    width: 6.5rem;
+    height: 4rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.playlist-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.25rem;
+    transition: var(--transition);
+}
+
+.playlist-btn:hover .play-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    background: var(--light-slate);
+    border: 1px solid var(--border-color);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    border-color: var(--primary-color);
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+/* Digital Business Card (3D Tilt effect) */
+.business-card-wrap {
+    perspective: 1000px;
+}
+
+.business-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1.25rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: box-shadow 0.3s;
+}
+
+/* FAQ Accordion Styling */
+.faq-accordion .accordion-item {
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem !important;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: var(--transition);
+}
+
+.faq-accordion .accordion-item:hover {
+    border-color: var(--primary-color);
+}
+
+.faq-accordion .accordion-button {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    color: var(--heading-color);
+    padding: 1.25rem 1.5rem;
+    background-color: #ffffff;
+    box-shadow: none !important;
+    transition: var(--transition);
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.faq-accordion .accordion-button::after {
+    transition: var(--transition);
+}
+
+/* Floating Action Contact Menu */
+.floating-action-menu {
+    position: fixed;
+    bottom: 2rem;
+    right: 2.2rem;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.floating-menu-trigger {
+    background-color: #a855f7;
+    /* Purple */
+    color: #ffffff;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.floating-menu-trigger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px rgba(168, 85, 247, 0.4);
+}
+
+.floating-menu-options {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.floating-menu-options.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.floating-menu-item {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.floating-menu-item:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+.floating-menu-item.whatsapp-btn {
+    background-color: #25d366;
+    /* WhatsApp Green */
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.floating-menu-item.whatsapp-btn:hover {
+    box-shadow: 0 12px 24px rgba(37, 211, 102, 0.4);
+}
+
+.floating-menu-item.call-btn {
+    background-color: #10b981;
+    /* Call Green */
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.floating-menu-item.call-btn:hover {
+    box-shadow: 0 12px 24px rgba(16, 185, 129, 0.4);
+}
+
+
+/* Floating back-to-top button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 100;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+    border: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+}
+
+/* Sticky Mobile CTA (Epione inspired) */
+.mobile-sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    display: none;
+    z-index: 99;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 767.98px) {
+    .mobile-sticky-cta {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.75rem;
+    }
+
+    .floating-whatsapp {
+        bottom: 5rem;
+    }
+
+    .back-to-top {
+        bottom: 5rem;
+    }
+
+    body {
+        padding-bottom: 4.5rem;
+        /* space for sticky mobile CTA */
+    }
+}
+
+/* General Layout Elements */
+.section-padding {
+    padding: 4rem 0;
+}
+
+@media (max-width: 767.98px) {
+    .section-padding {
+        padding: 2.5rem 0;
+    }
+}
+
+.section-title-wrap {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-subtitle {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.section-title-wrap .divider {
+    height: 3px;
+    width: 4.5rem;
+    background-color: var(--primary-color);
+    margin: 1.25rem auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Animation utilities */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    14% {
+        transform: scale(1.05);
+    }
+
+    28% {
+        transform: scale(1);
+    }
+
+    42% {
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+}
+
+.animate-heartbeat {
+    animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+/* Gallery Hover styling */
+.gallery-hover-item {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    aspect-ratio: 1;
+}
+
+.gallery-hover-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.gallery-hover-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-hover-item:hover .gallery-hover-overlay {
+    opacity: 1;
+}
+
+/* Forms styling */
+.form-control,
+.form-select {
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-color: var(--border-color);
+    font-size: 0.95rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    border-color: var(--primary-color);
+}
+
+/* Hover Dropdown menu for desktop views */
+@media (min-width: 992px) {
+    .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        animation: dropdownFadeIn 0.25s ease forwards;
+    }
+
+    .navbar-nav .dropdown-menu {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.25s ease;
+    }
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Dropdown Item Hover Styling */
+.dropdown-item {
+    color: var(--text-color);
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+}
+
+/* Condition Card Styling like the user-requested mockup */
+.condition-card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: var(--transition);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.condition-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.1) 100%);
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.condition-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.condition-card:hover::before {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.condition-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    z-index: 2;
+    color: #ffffff;
+}
+
+.condition-card-title {
+    font-weight: 700;
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff !important;
+}
+
+.condition-card-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.condition-card-link {
+    color: #00d4ff !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: var(--transition);
+}
+
+.condition-card-link:hover {
+    color: #38bdf8 !important;
+    text-decoration: underline !important;
+}
+
+/* Reviews Banner Slider (Epione Layout inspired) */
+.reviews-banner-section {
+    background-color: #f8fafc;
+}
+
+.reviews-banner {
+    background: linear-gradient(135deg, #0f766e 0%, #0369a1 100%);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Slanted design effect similar to the mockup */
+.reviews-slanted-divider {
+    position: relative;
+    overflow: hidden;
+}
+
+.reviews-slanted-divider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -20px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: skewX(-20deg);
+}
+
+.review-quote-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.google-reviews-badge {
+    background: #ffffff;
+    border-radius: 0.5rem;
+    padding: 0.4rem 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.75rem;
+    line-height: 1.2;
+}
+
+.google-brand-text {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.google-stars {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Carousel transitions and indicators override */
+.reviews-carousel .carousel-indicators {
+    bottom: -2.5rem;
+}
+
+.reviews-carousel .carousel-indicators [data-bs-target] {
+    background-color: var(--primary-color);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* Custom Navigation Arrows for Reviews Carousel */
+.reviews-carousel .carousel-control-prev,
+.reviews-carousel .carousel-control-next {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: var(--transition);
+    border: none;
+    opacity: 0.8;
+}
+
+.reviews-carousel .carousel-control-prev:hover,
+.reviews-carousel .carousel-control-next:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    opacity: 1;
+}
+
+.reviews-carousel .carousel-control-prev {
+    left: 1.5rem;
+}
+
+.reviews-carousel .carousel-control-next {
+    right: 1.5rem;
+}
+
+/* Ensure content has horizontal spacing so it does not overlap with arrows */
+.reviews-banner {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+}
+
+@media (max-width: 991px) {
+
+    .reviews-carousel .carousel-control-prev,
+    .reviews-carousel .carousel-control-next {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .reviews-carousel .carousel-control-prev {
+        left: 0.75rem;
+    }
+
+    .reviews-carousel .carousel-control-next {
+        right: 0.75rem;
+    }
+
+    .reviews-banner {
+        padding-left: 4rem !important;
+        padding-right: 4rem !important;
+    }
+}
+
+/* Responsive review content column border */
+.review-content-col {
+    border-right: none !important;
+}
+
+@media (min-width: 992px) {
+    .review-content-col {
+        border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+}
+
+/* Emergency WhatsApp Banner */
+.emergency-whatsapp-banner-link {
+    display: block;
+    max-width: 580px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    animation: emergency-shake 2.2s ease-in-out infinite;
+}
+
+.emergency-whatsapp-banner-link:hover {
+    animation-play-state: paused;
+}
+
+.emergency-whatsapp-banner {
+    background: #e53935;
+    /* Crimson/Emergency Red */
+    background: linear-gradient(135deg, #ff2525 0%, #cc1b1b 100%);
+    border-radius: 50px;
+    padding: 1rem 2.5rem;
+    box-shadow: 0 10px 30px rgba(229, 57, 53, 0.4);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.emergency-whatsapp-banner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(229, 57, 53, 0.6);
+}
+
+.emergency-icon-wrapper {
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    animation: emergency-icon-pulse 2s infinite;
+}
+
+.emergency-whatsapp-banner:hover .emergency-icon-wrapper {
+    transform: scale(1.1) rotate(8deg);
+}
+
+.emergency-icon {
+    color: #e53935;
+    width: 32px;
+    height: 32px;
+}
+
+.emergency-text-wrapper {
+    color: #ffffff;
+}
+
+.emergency-subtitle {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    line-height: 1.2;
+}
+
+.emergency-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-top: 2px;
+}
+
+@keyframes emergency-icon-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes emergency-shake {
+
+    0%,
+    50%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    55% {
+        transform: scale(1.03) rotate(-1.5deg);
+    }
+
+    60% {
+        transform: scale(1.03) rotate(1.5deg);
+    }
+
+    65% {
+        transform: scale(1.03) rotate(-1.5deg);
+    }
+
+    70% {
+        transform: scale(1.03) rotate(1.5deg);
+    }
+
+    75% {
+        transform: scale(1.03) rotate(-1deg);
+    }
+
+    80% {
+        transform: scale(1.03) rotate(1deg);
+    }
+}
+
+@media (max-width: 576px) {
+    .emergency-whatsapp-banner {
+        padding: 0.8rem 1.5rem;
+        gap: 0.75rem !important;
+    }
+
+    .emergency-icon-wrapper {
+        width: 45px;
+        height: 45px;
+    }
+
+    .emergency-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .emergency-subtitle {
+        font-size: 0.7rem;
+    }
+
+    .emergency-title {
+        font-size: 1.15rem;
+    }
+}
+
+.dr-talks-simple-bg {
+    background-color: #f8fafc;
+}
+
+.dr-talks-divider {
+    width: 4rem;
+    height: 0.25rem;
+    margin: 1rem auto 0;
+    border-radius: 999px;
+    background-color: var(--primary-color);
+}
+
+.dr-talks-slider {
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.dr-talks-slide {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+}
+
+.dr-talks-nav {
+    position: absolute;
+    top: 55%;
+    z-index: 2;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    transform: translateY(-50%);
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    box-shadow: 0 0.5rem 1rem rgba(15, 23, 42, 0.12);
+    transition: var(--transition);
+}
+
+.dr-talks-nav:hover {
+    background: var(--primary-light);
+}
+
+.dr-talks-nav-prev {
+    left: -1rem;
+}
+
+.dr-talks-nav-next {
+    right: -1rem;
+}
+
+.patient-videos-intro {
+    max-width: 42rem;
+}
+
+.patient-videos-divider {
+    width: 5rem;
+    margin-top: 1.5rem;
+}
+
+.patient-video-player {
+    width: 100%;
+    max-width: 28rem;
+    aspect-ratio: 9 / 16;
+}
+
+.patient-video-caption {
+    max-width: 42rem;
+}
+
+.patient-video-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.patient-playlist-sidebar {
+    max-height: 49rem;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.video-playlist-btn {
+    display: flex;
+    width: 100%;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(15, 23, 42, 0.05);
+    transition: var(--transition);
+}
+
+.video-playlist-btn:hover,
+.video-playlist-btn.video-btn-active {
+    background: var(--primary-light);
+    border-color: var(--primary-color);
+}
+
+.video-playlist-thumb {
+    position: relative;
+    flex: 0 0 4rem;
+    height: 7rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+}
+
+.video-playlist-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-playlist-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s ease;
+}
+
+.video-playlist-btn:hover .video-playlist-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.video-playlist-overlay svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
+
+.video-playlist-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0.5rem 0;
+}
+
+.video-playlist-label {
+    font-size: 0.625rem;
+    letter-spacing: 0.06em;
+}
+
+@media (min-width: 768px) {
+    .dr-talks-slide {
+        flex-basis: 45%;
+    }
+}
+
+@media (min-width: 992px) {
+    .dr-talks-slide {
+        flex-basis: 31%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .patient-video-player {
+        max-width: 22rem;
+    }
+}
+
+.dr-talks-video-box {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 4px solid #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.dr-talks-video-box:hover {
+    transform: scale(1.01);
+}
+
+.dr-talks-aspect {
+    position: relative;
+    /* If these are Reels/Vertical videos, change 56.25% to 177.77% */
+    padding-bottom: 56.25%;
+    height: 0;
+    background-color: #000;
+}
+
+.dr-talks-aspect video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* New: Hides the scrollbar for a clean carousel look */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

@@ -1,0 +1,11 @@
+# Robots.txt for Dr. Vinay Ausekar
+User-agent: *
+Allow: /
+
+# Disallow administrative and API scripts
+Disallow: /api/
+Disallow: /database/
+Disallow: /includes/
+
+# Sitemap Location
+Sitemap: https://drvinayausekar.com/sitemap.xml
