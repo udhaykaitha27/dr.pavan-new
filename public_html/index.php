@@ -91,7 +91,7 @@ $csrf_token = generateCSRFToken();
         
         <div class="carousel-inner">
             <!-- Slide 1 (Dark Theme Background) -->
-            <div class="carousel-item active" style="background-image: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.85) 45%, rgba(15, 23, 42, 1) 70%), url('assets/images/ebanner.jpg'); background-size: cover; background-position: center; padding: 3.5rem 0 2rem 0;">
+            <div class="carousel-item active" style="background-image: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.85) 45%, rgba(15, 23, 42, 1) 70%), url('assets/images/ebanner.jpeg'); background-size: cover; background-position: center; padding: 3.5rem 0 2rem 0;">
                 <div class="container">
                     <div class="row align-items-center g-5">
                         <div class="col-lg-7 text-center text-lg-start order-2 order-lg-1">
