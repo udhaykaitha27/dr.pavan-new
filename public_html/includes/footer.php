@@ -67,11 +67,24 @@ require_once __DIR__ . '/config.php';
 
         <hr class="border-secondary border-opacity-10 my-4">
 
-        <div class="row align-items-center justify-content-between">
-            <div class="col-md-6 text-center text-md-start">
+        <div class="row align-items-center g-3">
+            <div class="col-12 col-lg-4 text-center text-lg-start">
                 <p class="small text-secondary mb-0">&copy; <?php echo date("Y"); ?> Dr. Pavan Kumar Ediga. All rights reserved.</p>
             </div>
-            <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+            <div class="col-12 col-lg-4 d-flex justify-content-center">
+                <a class="footer-credit" href="https://jvlogix.com/superrealtors/" target="_blank" rel="noopener noreferrer" aria-label="Designed and built by JV Logix">
+                    <span class="footer-credit-logo-wrap">
+                        <img
+                            src="<?php echo BASE_URL; ?>assets/images/jv-logix.webp"
+                            alt="JV Logix logo"
+                            class="footer-credit-logo"
+                            loading="lazy"
+                        >
+                    </span>
+                    <span class="footer-credit-text">Designed &amp; built by <strong>JV Logix</strong></span>
+                </a>
+            </div>
+            <div class="col-12 col-lg-4 text-center text-lg-end">
                 <p class="small text-secondary mb-0">Care with surgical precision.</p>
             </div>
         </div>

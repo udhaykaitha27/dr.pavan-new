@@ -11,14 +11,24 @@ if (session_status() === PHP_SESSION_NONE) {
 // Set timezone
 date_default_timezone_set('Asia/Kolkata');
 
-// Base URL Configuration (Update this with live domain on production)
-// Auto-detect Base URL (works for subfolder on localhost and root on server)
+// Derive the public URL path from this project's location under the web root.
 $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://';
-if ($_SERVER['HTTP_HOST'] === 'localhost') {
-    define('BASE_URL', $protocol . $_SERVER['HTTP_HOST'] . '/drvinayausekar.com/public_html/');
-} else {
-    define('BASE_URL', $protocol . $_SERVER['HTTP_HOST'] . '/');
+$project_root = realpath(__DIR__ . DIRECTORY_SEPARATOR . '..');
+$document_root = isset($_SERVER['DOCUMENT_ROOT']) ? realpath($_SERVER['DOCUMENT_ROOT']) : false;
+$base_path = '/';
+
+if ($project_root !== false && $document_root !== false) {
+    $document_root = rtrim($document_root, '\\/');
+    $root_prefix = $document_root . DIRECTORY_SEPARATOR;
+
+    if (stripos($project_root, $root_prefix) === 0) {
+        $relative_path = substr($project_root, strlen($root_prefix));
+        $base_path = '/' . str_replace(DIRECTORY_SEPARATOR, '/', $relative_path) . '/';
+    } elseif (strcasecmp($project_root, $document_root) === 0) {
+        $base_path = '/';
+    }
 }
+define('BASE_URL', $protocol . $_SERVER['HTTP_HOST'] . $base_path);
 
 // Database Configuration
 define('DB_HOST', 'localhost');
